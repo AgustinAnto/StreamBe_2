@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/facil', async (req, res) => {
   try{ //sino hace esto va a catch//
 
-    res.status(200).sendFile(path.join(__dirname, 'facil.html'));
+    res.status(200).sendFile(path.join(__dirname, 'Facil.html'));
 
     }catch(e){ //si hay un error cae aca//
       
@@ -38,13 +38,37 @@ app.get('/facil', async (req, res) => {
 app.get('/Moderado-1', async (req, res) => {
   try{ //sino hace esto va a catch//
 
-    res.status(200).sendFile(path.join(__dirname, 'goles.html'));
+    res.status(200).sendFile(path.join(__dirname, 'Moderado-1.html'));
 
     }catch(e){ //si hay un error cae aca//
       
       res.status(500).send({'error': 'Internal server error'})
     }
 })
+
+app.get('/Dificil', async (req, res) => {
+  try{ //sino hace esto va a catch//
+
+    res.status(200).sendFile(path.join(__dirname, 'Dificil'));
+
+    }catch(e){ //si hay un error cae aca//
+      
+      res.status(500).send({'error': 'Internal server error'})
+    }
+})
+
+
+app.get('/Formulario', async (req, res) => {
+  try{ //sino hace esto va a catch//
+
+    res.status(200).sendFile(path.join(__dirname, 'Formulario'));
+
+    }catch(e){ //si hay un error cae aca//
+      
+      res.status(500).send({'error': 'Internal server error'})
+    }
+})
+
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
